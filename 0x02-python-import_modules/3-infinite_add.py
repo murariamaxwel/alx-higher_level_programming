@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+
 if __name__ == "__main__":
+    """Print the num of and ls of args."""
     import sys
 
-    n = 0
-    for i in range(len(sys.argv) - 1):
-        n += int(sys.argv[i + 1])
-    print("{}".format(n))
+    n = len(sys.argv) - 1
+    if n == 0:
+        print("0 arguments.")
+    elif n == 1:
+        print("1 argument:")
+    else:
+        print("{} arguments:".format(n))
+    for i in range(n):
+        print("{}: {}".format(i + 1, sys.argv[i + 1]))
